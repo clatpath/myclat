@@ -1,0 +1,86 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Form {
+  background: #f8f5f1;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  max-width: 250px;
+  width: 80%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 2.5rem;
+  margin-top: calc(1rem + 1vh);
+  box-shadow: 8px 8px 8px rgb(211, 211, 211, 0.5);
+}
+
+.formHeader {
+  margin: 0 0 1rem 0;
+}
+
+.Form label {
+  font-size: (1ch + 1vw);
+}
+.Form input {
+  margin-bottom: 0.5rem;
+
+  padding: 5px 10px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+.Form input:focus {
+  outline: none;
+  box-shadow: inset 0.2px 0.2px 1px #babecc, inset -0.2px -0.2px 1px #fff;
+}
+
+.Formselect {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0rem;
+}
+
+.Formselect select {
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.signUpButton {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 2rem;
+  border: none;
+  background: #161d6f;
+  border-radius: 5px;
+  font-weight: 100;
+  color: #fff;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.mobileSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobileSection button {
+  padding: 0 0.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  background: #ccffbd;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.mobileSection button:focus {
+  outline: none;
+}

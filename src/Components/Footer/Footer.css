@@ -1,0 +1,73 @@
+.footer-one {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  /* height: max-content; */
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: white;
+}
+
+.footerFirstElement {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footerFirstElement h1 {
+  font-size: calc(1rem + 1vw);
+  margin: 0 0.5em;
+}
+
+.footerFirstElementIcons * {
+  margin: 10px 10px;
+}
+
+.footerAbout {
+  margin-top: 1rem;
+}
+.footerAbout h4 {
+  font-size: 1.2rem;
+}
+.footerAbout p {
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.footerHelp {
+  margin-top: 1rem;
+}
+
+.footerHelp h4 {
+  font-size: 1.2rem;
+}
+
+.footerHelp p {
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.footerStudent {
+  margin-top: 1rem;
+}
+.footerStudent p {
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.footerStudent h4 {
+  font-size: 1.2rem;
+}
+.footer-two {
+  margin: 1px 0;
+  padding: 1rem 0;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.FsectionTwo a {
+  margin: 0 1rem;
+}

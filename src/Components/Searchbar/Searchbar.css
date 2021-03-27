@@ -1,0 +1,34 @@
+.searchBar {
+  position: relative;
+  width: max-content;
+  margin: auto;
+}
+
+.searchBar input {
+  padding: 0.4rem 1.5rem;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 2rem;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.searchBtn:hover {
+  background: #c7bebe;
+}
+
+.searchBtn:focus {
+  outline: none;
+}
