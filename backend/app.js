@@ -9,14 +9,15 @@ const connectDB = require("./confiq/db");
 
 
 const app = express();
-// connectDB();
+connectDB();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cors());
 
 
 
-
+//My routes
+const userRouter = require("./Routes/userRoutes");
 
 
 
@@ -29,6 +30,8 @@ app.use(function (req, res, next) {
     next();
   });
 
+// routes
+app.use("/myclat/users", userRouter);
 
 const port = 5000;
 app.listen(`${port}` , (req, res) => {

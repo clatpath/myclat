@@ -84,3 +84,10 @@
 .mobileSection button:focus {
   outline: none;
 }
+
+.alertSpan {
+  margin-top: -10px;
+  margin-left: 5px;
+  color: #bd2000;
+  font-size: 12px;
+}
