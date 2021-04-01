@@ -95,14 +95,12 @@ const Signup = () => {
                 value={formik.values.name} required></input>
                 {formik.touched.name && formik.errors.name ? (
                     <span className="alertSpan">{formik.errors.name}</span>
-               
                     ) : 
                     null}
-
                 <label htmlFor="phoneNumber" >Mobile Number</label>
                 <div className="mobileSection">
                 <input name="phoneNumber" type="number" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phoneNumber} required/>
-                <button>verify</button>
+                <a>verify</a>
                 </div>
                 {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
                     <span className="alertSpan">{formik.errors.phoneNumber}</span>

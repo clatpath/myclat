@@ -70,9 +70,10 @@
   justify-content: space-between;
 }
 
-.mobileSection button {
-  padding: 0 0.5rem;
-  margin: 0 0 0.5rem 0;
+.mobileSection a {
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 12px;
   font-weight: 400;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 4px;
@@ -81,7 +82,7 @@
   transition: 400ms;
 }
 
-.mobileSection button:focus {
+.mobileSection a:focus {
   outline: none;
 }
 

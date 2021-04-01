@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(`mongodb://localhost:27017/myclatDB`, {
+    const conn = await mongoose.connect(`${process.env.MONGOLOCAL}`, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
