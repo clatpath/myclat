@@ -31,20 +31,22 @@ exports.userLogin = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   //validation email and password
-  if (!email || !password) {
-    return next(new Error("Please enter email id and password", 400));
-  }
+  // if (!email || !password) {
+  //   return next(new Error("Please enter email id and password", 400));
+  // }
   //check for user
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return next(new Error("Invalid credential", 401));
+    res.send("Invalid Email" , 401)
+    // return next(new Error("Invalid credential", 401));
   }
   //check if password matchs
   const isMatch = await user.matchPassword(password);
 
   if (!isMatch) {
-    return next(new Error("Invalid password", 401));
+    res.send("Invalid Password" , 401)
+    // return next(new Error("Invalid password", 401));
   }
   //create token
   sendTokenResponse(user, 200, res);
