@@ -19,6 +19,7 @@ app.use(cors());
 
 //My routes
 const userRouter = require("./Routes/userRoutes");
+const adminRouter = require("./Routes/adminRoutes");
 
 
 
@@ -33,6 +34,7 @@ app.use(function (req, res, next) {
 
 // routes
 app.use("/myclat/users", userRouter);
+app.use("/myclat/admins", adminRouter);
 
 const port = 5000;
 app.listen(`${port}` , (req, res) => {

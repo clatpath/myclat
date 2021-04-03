@@ -33,6 +33,7 @@ const Login = () => {
             setTimeout(() => {
                 try {
                     axios.post("http://localhost:5000/myclat/users/login",values).then((res)=>{
+                        console.log(res)
                         // localStorage.setItem("myClatUId", res.data.user._id);
                         // localStorage.setItem("myClatEmail", res.data.user.email);
                         // localStorage.setItem("myClatName", res.data.user.name);
