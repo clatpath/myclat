@@ -4,29 +4,29 @@ const asyncHandler = require("express-async-handler");
 
 exports.createQuestion = asyncHandler(async(req , res ) => {
     const {category , questionName , questionOptionOne, questionOptionTwo, questionOptionThree, questionOptionFour, correctOption, mockSetName} = req.body;
-    console.log(req.body)
-    // const newQuestion = Question.create({
-    //     category,
-    //     questionName,
-    //     questionOptionOne,
-    //     questionOptionTwo,
-    //     questionOptionThree,
-    //     questionOptionFour,
-    //     correctOption,
-    //     mockSetName
-    // });
 
-    // if(!newQuestion){
-    //     res.status(404).json({
-    //         message: "Database is not able to connect!"
-    //     })
-    // }
+    const newQuestion = Question.create({
+        category,
+        questionName,
+        questionOptionOne,
+        questionOptionTwo,
+        questionOptionThree,
+        questionOptionFour,
+        correctOption,
+        mockSetName
+    });
 
-    // if(newQuestion) {
-    //     res.send(201).json({
-    //         message: "Question Created"
-    //     })
-    // }
+    if(!newQuestion){
+        res.status(404).json({
+            message: "Database is not able to connect!"
+        })
+    }
+
+    if(newQuestion) {
+        res.send(201).json({
+            message: "Question Created"
+        })
+    }
 });
 
 exports.createMockSet = asyncHandler(async(req,res) => {
@@ -48,5 +48,20 @@ exports.createMockSet = asyncHandler(async(req,res) => {
             message: "Mockset Created!"
         })
     }
+});
 
+exports.viewMockSet = asyncHandler(async(req,res) => {
+    const allMock = await Mockset.find({});
+    
+    if(!allMock) {
+        res.status(404).json({
+            message: "Server Error! try again later."
+        })
+    }
+
+    if(allMock) {
+        res.json({
+            mock: allMock
+        }).status(200);
+    }   
 })

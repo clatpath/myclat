@@ -38,14 +38,18 @@ exports.userLogin = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    res.send("Invalid Email" , 401)
+    res.status(401).json({
+      message:"Invalid Email"
+    })
     // return next(new Error("Invalid credential", 401));
   }
   //check if password matchs
   const isMatch = await user.matchPassword(password);
 
   if (!isMatch) {
-    res.send("Invalid Password" , 401)
+    res.status(401).json({
+      message: "Invalid Password"
+    })
     // return next(new Error("Invalid password", 401));
   }
   //create token
