@@ -3,17 +3,18 @@ const Mockset = require("../Model/Mockset");
 const asyncHandler = require("express-async-handler");
 
 exports.createQuestion = asyncHandler(async(req , res ) => {
-    const {category , questionName , questionOptionOne, questionOptionTwo, questionOptionThree, questionOptionFour, correctOption, mockSetName} = req.body;
+    const {category , questionPassage , questionName, questionOptionOne, questionOptionTwo, questionOptionThree, questionOptionFour, correctOption, mockSetId} = req.body;
 
     const newQuestion = Question.create({
         category,
+        questionPassage,
         questionName,
         questionOptionOne,
         questionOptionTwo,
         questionOptionThree,
         questionOptionFour,
         correctOption,
-        mockSetName
+        mockSetId
     });
 
     if(!newQuestion){
@@ -32,7 +33,7 @@ exports.createQuestion = asyncHandler(async(req , res ) => {
 exports.createMockSet = asyncHandler(async(req,res) => {
     const {mocksetname, online} = req.body;
 
-    const newMocksetName = Mockset.create({
+    const newMocksetName = await Mockset.create({
         mocksetname,
         online
     });
@@ -45,6 +46,7 @@ exports.createMockSet = asyncHandler(async(req,res) => {
 
     if(newMocksetName){
         res.status(201).json({
+            newMocksetName,
             message: "Mockset Created!"
         })
     }
@@ -65,3 +67,7 @@ exports.viewMockSet = asyncHandler(async(req,res) => {
         }).status(200);
     }   
 })
+
+// exports.questionByMockSet = asyncHandler(async(req, res) => {
+
+// })

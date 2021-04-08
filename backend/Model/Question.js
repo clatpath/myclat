@@ -6,6 +6,9 @@ const questionSchema = mongoose.Schema(
         category : {
             type: String
         },
+        questionPassage : {
+            type: String
+        },
         questionName : {
             type: String
         },
@@ -24,7 +27,7 @@ const questionSchema = mongoose.Schema(
         correctOption : {
             type: String
         },
-        mockSetName: {
+        mockSetId: {
             type: String
         },
     },
