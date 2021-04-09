@@ -68,6 +68,19 @@ exports.viewMockSet = asyncHandler(async(req,res) => {
     }   
 })
 
-// exports.questionByMockSet = asyncHandler(async(req, res) => {
+exports.questionByMockSet = asyncHandler(async(req, res) => {
+    const mockId = req.query.ID;
 
-// })
+    const allQuestion = await Question.find({mockSetId: mockId});
+
+    if(!allQuestion){
+        res.status(404).json({
+            message: "Server Error! try again later."
+        })
+        console.log(true)
+    }
+
+    if(allQuestion){
+        res.send(allQuestion).status(200)
+    }
+})
