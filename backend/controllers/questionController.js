@@ -73,14 +73,47 @@ exports.questionByMockSet = asyncHandler(async(req, res) => {
 
     const allQuestion = await Question.find({mockSetId: mockId});
 
+    if(allQuestion.length === 0) {
+        res.status(404).json({
+            message: "No Question Found!!!"
+        })
+    }
+
+
     if(!allQuestion){
         res.status(404).json({
             message: "Server Error! try again later."
         })
-        console.log(true)
     }
 
     if(allQuestion){
         res.send(allQuestion).status(200)
     }
+})
+
+exports.updateQuestion = asyncHandler(async (req, res) => {
+    const questionId = req.params.id;
+    const { updateQuestion } =  req.body;
+
+    const updatedQuestion = await Question.findByIdAndUpdate(questionId, {
+        questionPassage : updateQuestion.questionPassage,
+        questionName : updateQuestion.questionName,
+        questionOptionOne : updateQuestion.questionOptionOne,
+        questionOptionTwo : updateQuestion.questionOptionTwo,
+        questionOptionThree : updateQuestion.questionOptionThree,
+        questionOptionFour : updateQuestion.questionOptionFour,
+        correctOption: updateQuestion.correctOption,
+    }, (err, newQuestion) => {
+        if(err){
+            res.status(401).json({
+                message : "Error While Updating!"
+            })
+        }
+
+        if(newQuestion){
+            res.status(200).json({
+                message : "Succesfully Updated!"
+            })
+        }
+    })
 })
